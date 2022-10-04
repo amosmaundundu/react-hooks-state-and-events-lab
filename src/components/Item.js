@@ -2,12 +2,18 @@
 import React, {useState} from "react";
 
 function Item({ name, category }) {
-  const [inCart, setInCart] = useState(false);
+  const [location, setLocation] = useState(false)
+
+  function handleLocation () {
+    setLocation((location) => !location)
+  }
+
+
   return (
-    <li className={inCart? "in-Cart":""}>
+    <li className = {location ? "in-cart" : ""}>
       <span>{name}</span>
       <span className="category">{category}</span>
-      <button className="add" onClick={() => setInCart(!inCart)}>Add to Cart</button>
+      <button className={location ? "remove" : "add"} onClick = {handleLocation}>{location? "Remove From" : "Add to"} Cart</button>
     </li>
   );
 }

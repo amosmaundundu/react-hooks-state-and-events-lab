@@ -5,7 +5,7 @@ function ShoppingList({ items }) {
   const [selectedCategory, setSelectedCategory] = useState(items)
   const onSelect = (e) => {
 
-    let newData = items.filter(({ category }) => category == e)
+    let newData = items.filter(({ category }) => category === e)
     setSelectedCategory(newData)}
   return (
     <div className="ShoppingList">
